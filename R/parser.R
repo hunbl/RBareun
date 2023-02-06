@@ -1,8 +1,9 @@
-# Create stub object from protobuf spec
-#
-# @param file the spec file
-# @return a stub data structure
-# @importFrom RProtoBuf readProtoFiles
+#' Create stub object from protobuf spec
+#'
+#' @param file the spec file
+#' @return a stub data structure
+#' @importFrom RProtoBuf readProtoFiles
+#' @export
 read_services <- function(file){
   SERVICE = "service"
   RPC = "rpc"
