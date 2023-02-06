@@ -11,7 +11,6 @@ tag_labels <- c("EC", "EF", "EP", "ETM", "ETN", "IC",
                 "VA", "VCN", "VCP", "VV", "VX",
                 "XPN", "XR", "XSA", "XSN", "XSV", "_SP_", "PAD")
 
-
 .get_client <- function(host, proto) {
   grpc_client(read_services(proto), host)
 }
@@ -29,8 +28,7 @@ tag_labels <- c("EC", "EF", "EP", "ETM", "ETN", "IC",
   }
   doc$content <- text
   doc$language <- "ko_KR"
-  example <- client$AnalyzeSyntax$build(document = doc,
-    encoding_type = 1, auto_split_sentence = 0, custom_domain = domain)
+  example <- client$AnalyzeSyntax$build(document = doc, custom_domain = domain)
   client$AnalyzeSyntax$call(example, metadata = .meta(apikey))
 }
 
